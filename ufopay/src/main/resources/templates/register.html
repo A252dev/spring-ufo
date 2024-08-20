@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+
+<body>
+    <h3>Register</h3>
+    <form action="/register" method="post">
+        <h5>Email</h5>
+        <input type="text" name="email" /><br>
+        <h5>First name</h5>
+        <input type="text" name="firstName" /><br>
+        <h5>Second name</h5>
+        <input type="text" name="secondName" /><br>
+        <h5>Password</h5>
+        <input type="password" name="password" /><br><br>
+        <input type="hidden" name="_csrf" value="${_csrf.token}" />
+        <input type="submit" value="Register" />
+    </form>
+</body>
+
+</html>
