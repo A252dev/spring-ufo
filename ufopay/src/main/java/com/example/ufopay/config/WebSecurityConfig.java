@@ -32,9 +32,9 @@ public class WebSecurityConfig {
         http.csrf(AbstractHttpConfigurer::disable)
                 .sessionManagement(customizer -> customizer.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(
-                        // Разрешить доступ под методом POST к /login и /register
+                        // Give access to POST in /login and /register urls
                         (requests) -> requests.requestMatchers(HttpMethod.POST, "/login", "/register").permitAll()
-                                // А для профиля нужно быть авторизованным
+                                // To get access for the profile you need a will be authorized
                                 .requestMatchers("/profile/**").authenticated()
                                 .anyRequest().authenticated())
                 .addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
@@ -42,13 +42,13 @@ public class WebSecurityConfig {
         return http.build();
     }
 
-    // Для управления аутентификацией
+    // For authentication
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration configuration) throws Exception {
         return configuration.getAuthenticationManager();
     }
 
-    // Для защиты паролей
+    // For the password protect
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();

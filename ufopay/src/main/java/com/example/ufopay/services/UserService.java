@@ -198,18 +198,18 @@ public class UserService {
 
         switch (convertRequest.toCurrency()) {
             case "USD":
-                Double usdSumma = exchangeApi.getData(convertRequest.fromCurrency(), convertRequest.summa()).get("USD");
-                getMyBalance().setBalance_usd(getMyBalance().getBalance_usd() + usdSumma);
+                // Double usdSumma = exchangeApi.getData(convertRequest.fromCurrency());
+                getMyBalance().setBalance_usd(getMyBalance().getBalance_usd() + 10.0);
                 userBalanceRepository.save(myUserBalance);
                 break;
             case "RUB":
-                Double rubSumma = exchangeApi.getData(convertRequest.fromCurrency(), convertRequest.summa()).get("RUB");
-                getMyBalance().setBalance_rub(getMyBalance().getBalance_rub() + rubSumma);
+                // Double rubSumma = exchangeApi.getData(convertRequest.fromCurrency(), convertRequest.summa()).get("RUB");
+                getMyBalance().setBalance_rub(getMyBalance().getBalance_rub() + 10.0);
                 userBalanceRepository.save(myUserBalance);
                 break;
             case "EUR":
-                Double eurSumma = exchangeApi.getData(convertRequest.fromCurrency(), convertRequest.summa()).get("EUR");
-                getMyBalance().setBalance_eur(getMyBalance().getBalance_eur() + eurSumma);
+                // Double eurSumma = exchangeApi.getData(convertRequest.fromCurrency(), convertRequest.summa()).get("EUR");
+                getMyBalance().setBalance_eur(getMyBalance().getBalance_eur() + 10.0);
                 userBalanceRepository.save(myUserBalance);
                 break;
             default:
