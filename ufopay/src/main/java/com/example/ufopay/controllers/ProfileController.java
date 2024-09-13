@@ -6,6 +6,8 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.ufopay.dto.ConvertRequest;
 import com.example.ufopay.dto.ConvertResponse;
 import com.example.ufopay.dto.ExchangeDto;
 import com.example.ufopay.dto.ProfileDto;
@@ -23,6 +24,9 @@ import com.example.ufopay.dto.TransferRequest;
 import com.example.ufopay.dto.TransferResponse;
 import com.example.ufopay.services.ExchangeApi;
 import com.example.ufopay.services.UserService;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectWriter;
+
 import lombok.RequiredArgsConstructor;
 
 // Auth for access here
@@ -35,7 +39,7 @@ public class ProfileController {
     private final ExchangeApi exchangeApi;
 
     // Show content with information for the Angular
-    @GetMapping("/test")
+    @GetMapping("/index")
     public ResponseEntity<ProfileDto> index() {
         if (userService.getUserInfo() != null) {
             return ResponseEntity.ok(new ProfileDto(userService.getUserInfo()));
@@ -53,25 +57,25 @@ public class ProfileController {
     }
 
     @PostMapping("/convert")
-    public ConvertResponse convertation(@RequestBody ConvertRequest convertRequest) {
+    public ConvertResponse convertation(@RequestBody ExchangeDto convertRequest) throws JSONException, IOException {
+
+        // JSONObject json = new JSONObject(jsonString);
+        // JSONObject json = userService.getSummaFromBaseCurrency(convertRequest);
+
         return userService.convert(convertRequest);
     }
 
     @GetMapping("/exchange")
-    public Object exchange(@RequestBody ExchangeDto baseCurrency) throws IOException {
-        Map<String, Object> currencies = exchangeApi.getData(baseCurrency);
+    public Object exchange(@RequestBody ExchangeDto exchangeData) throws IOException {
+        Map<String, Object> currencies = exchangeApi.getData(exchangeData);
         Object list = currencies.get("conversion_rates");
 
-        Field[] fields = list.getClass().getDeclaredFields();
+        ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
+        String json = ow.writeValueAsString(list);
 
-        Map<String, Object> data = new HashMap<>();
+        JSONObject jsonObject = new JSONObject(json);
 
-        for (Field field: fields) {
-            field.setAccessible(true);
-            // data.put(field.getName(), field.get(list));
-        }
-
-        return fields.toString();
+        return jsonObject;
     }
 
 }

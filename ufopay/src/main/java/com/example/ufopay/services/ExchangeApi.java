@@ -29,7 +29,9 @@ public class ExchangeApi {
 
     public Map<String, Object> getData(ExchangeDto exchangeDto) throws IOException {
 
-        InputStream is = new URL("https://v6.exchangerate-api.com/v6/ce3ba77a89e6e5e13dcbaf76/latest/" + exchangeDto.baseCurrency()).openStream();
+        InputStream is = new URL(
+                "https://v6.exchangerate-api.com/v6/ce3ba77a89e6e5e13dcbaf76/latest/" + exchangeDto.baseCurrency())
+                .openStream();
 
         try {
             BufferedReader rd = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
