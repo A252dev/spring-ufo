@@ -10,8 +10,6 @@ import com.example.ufopay.entities.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
-    // UserDto findByEmail(String email);
-
     Optional<User> findByEmail(String email);
 
     User findByUserId(Integer id);

@@ -21,13 +21,13 @@ public class AuthController {
 
     private final UserService userService;
 
-    // Вход в систему
+    // Login to system
     @PostMapping("/login")
     public ResponseEntity<LoginResponse> login(@RequestBody LoginRequest credentialsDto) {
         return userService.login(credentialsDto);
     }
 
-    // Создание нового аккаунта
+    // Create the new account
     @PostMapping("/register")
     public ResponseEntity<User> register(@RequestBody SignUpDto signUpDto) {
         User user = userService.register(signUpDto);

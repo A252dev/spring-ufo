@@ -1,7 +1,9 @@
 package com.example.ufopay.services.jwt;
 
+import java.beans.BeanProperty;
 import java.util.Collections;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -27,6 +29,7 @@ public class UserServiceImpl implements UserDetailsService {
 
         return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(),
                 Collections.emptyList());
+
     }
 
 }
