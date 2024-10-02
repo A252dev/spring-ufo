@@ -1,6 +1,7 @@
 package com.example.ufopay.controllers;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.List;
 import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -63,7 +64,7 @@ public class ProfileController {
 
     @GetMapping("/addbalance")
     public TransferResponse addBalance(@RequestBody TransferRequest transferRequest) {
-        return actionService.addBalance(transferRequest.summa(), transferRequest.currency());
+        return actionService.addBalance(new BigDecimal(transferRequest.summa()), transferRequest.currency());
     }
 
     @GetMapping("/history")

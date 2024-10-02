@@ -1,6 +1,8 @@
 package com.example.ufopay.services;
 
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -646,103 +648,127 @@ public class ActionService {
 
     }
 
-    public TransferResponse addBalance(Double summa, String currency) {
+    public TransferResponse addBalance(BigDecimal summa, String currency) {
 
         switch (currency) {
             case "AUD":
-                getMyBalance().setAUD(getMyBalance().getAUD() + summa);
+                getMyBalance().setAUD(new BigDecimal(getMyBalance().getAUD()).add(summa).setScale(2, RoundingMode.DOWN)
+                        .doubleValue());
                 userBalanceRepository.save(getMyBalance());
                 break;
             case "BRL":
-                getMyBalance().setBRL(getMyBalance().getBRL() + summa);
+                getMyBalance().setBRL(new BigDecimal(getMyBalance().getBRL()).add(summa).setScale(2, RoundingMode.DOWN)
+                        .doubleValue());
                 userBalanceRepository.save(getMyBalance());
                 break;
             case "CAD":
-                getMyBalance().setCAD(getMyBalance().getCAD() + summa);
+                getMyBalance().setCAD(new BigDecimal(getMyBalance().getCAD()).add(summa).setScale(2, RoundingMode.DOWN)
+                        .doubleValue());
                 userBalanceRepository.save(getMyBalance());
                 break;
             case "CNY":
-                getMyBalance().setCNY(getMyBalance().getCNY() + summa);
+                getMyBalance().setCNY(new BigDecimal(getMyBalance().getCNY()).add(summa).setScale(2, RoundingMode.DOWN)
+                        .doubleValue());
                 userBalanceRepository.save(getMyBalance());
                 break;
             case "CZK":
-                getMyBalance().setCZK(getMyBalance().getCZK() + summa);
+                getMyBalance().setCZK(new BigDecimal(getMyBalance().getCZK()).add(summa).setScale(2, RoundingMode.DOWN)
+                        .doubleValue());
                 userBalanceRepository.save(getMyBalance());
                 break;
             case "DKK":
-                getMyBalance().setDKK(getMyBalance().getDKK() + summa);
+                getMyBalance().setDKK(new BigDecimal(getMyBalance().getDKK()).add(summa).setScale(2, RoundingMode.DOWN)
+                        .doubleValue());
                 userBalanceRepository.save(getMyBalance());
                 break;
             case "EUR":
-                getMyBalance().setEUR(getMyBalance().getEUR() + summa);
+                getMyBalance().setEUR(new BigDecimal(getMyBalance().getEUR()).add(summa).setScale(2, RoundingMode.DOWN)
+                        .doubleValue());
                 userBalanceRepository.save(getMyBalance());
                 break;
             case "HKD":
-                getMyBalance().setHKD(getMyBalance().getHKD() + summa);
+                getMyBalance().setHKD(new BigDecimal(getMyBalance().getHKD()).add(summa).setScale(2, RoundingMode.DOWN)
+                        .doubleValue());
                 userBalanceRepository.save(getMyBalance());
                 break;
             case "HUF":
-                getMyBalance().setHUF(getMyBalance().getHUF() + summa);
+                getMyBalance().setHUF(new BigDecimal(getMyBalance().getHUF()).add(summa).setScale(2, RoundingMode.DOWN)
+                        .doubleValue());
                 userBalanceRepository.save(getMyBalance());
                 break;
             case "ILS":
-                getMyBalance().setILS(getMyBalance().getILS() + summa);
+                getMyBalance().setILS(new BigDecimal(getMyBalance().getILS()).add(summa).setScale(2, RoundingMode.DOWN)
+                        .doubleValue());
                 userBalanceRepository.save(getMyBalance());
                 break;
             case "JPY":
-                getMyBalance().setJPY(getMyBalance().getJPY() + summa);
+                getMyBalance().setJPY(new BigDecimal(getMyBalance().getJPY()).add(summa).setScale(2, RoundingMode.DOWN)
+                        .doubleValue());
                 userBalanceRepository.save(getMyBalance());
                 break;
             case "MYR":
-                getMyBalance().setMYR(getMyBalance().getMYR() + summa);
+                getMyBalance().setMYR(new BigDecimal(getMyBalance().getMYR()).add(summa).setScale(2, RoundingMode.DOWN)
+                        .doubleValue());
                 userBalanceRepository.save(getMyBalance());
                 break;
             case "MXN":
-                getMyBalance().setMXN(getMyBalance().getMXN() + summa);
+                getMyBalance().setMXN(new BigDecimal(getMyBalance().getMXN()).add(summa).setScale(2, RoundingMode.DOWN)
+                        .doubleValue());
                 userBalanceRepository.save(getMyBalance());
                 break;
             case "TWD":
-                getMyBalance().setTWD(getMyBalance().getTWD() + summa);
+                getMyBalance().setTWD(new BigDecimal(getMyBalance().getTWD()).add(summa).setScale(2, RoundingMode.DOWN)
+                        .doubleValue());
                 userBalanceRepository.save(getMyBalance());
                 break;
             case "NZD":
-                getMyBalance().setNZD(getMyBalance().getNZD() + summa);
+                getMyBalance().setNZD(new BigDecimal(getMyBalance().getNZD()).add(summa).setScale(2, RoundingMode.DOWN)
+                        .doubleValue());
                 userBalanceRepository.save(getMyBalance());
                 break;
             case "NOK":
-                getMyBalance().setNOK(getMyBalance().getNOK() + summa);
+                getMyBalance().setNOK(new BigDecimal(getMyBalance().getNOK()).add(summa).setScale(2, RoundingMode.DOWN)
+                        .doubleValue());
                 userBalanceRepository.save(getMyBalance());
                 break;
             case "PHP":
-                getMyBalance().setPHP(getMyBalance().getPHP() + summa);
+                getMyBalance().setPHP(new BigDecimal(getMyBalance().getPHP()).add(summa).setScale(2, RoundingMode.DOWN)
+                        .doubleValue());
                 userBalanceRepository.save(getMyBalance());
                 break;
             case "PLN":
-                getMyBalance().setPLN(getMyBalance().getPLN() + summa);
+                getMyBalance().setPLN(new BigDecimal(getMyBalance().getPLN()).add(summa).setScale(2, RoundingMode.DOWN)
+                        .doubleValue());
                 userBalanceRepository.save(getMyBalance());
                 break;
             case "GBP":
-                getMyBalance().setGBP(getMyBalance().getGBP() + summa);
+                getMyBalance().setGBP(new BigDecimal(getMyBalance().getGBP()).add(summa).setScale(2, RoundingMode.DOWN)
+                        .doubleValue());
                 userBalanceRepository.save(getMyBalance());
                 break;
             case "SGD":
-                getMyBalance().setSGD(getMyBalance().getSGD() + summa);
+                getMyBalance().setSGD(new BigDecimal(getMyBalance().getSGD()).add(summa).setScale(2, RoundingMode.DOWN)
+                        .doubleValue());
                 userBalanceRepository.save(getMyBalance());
                 break;
             case "SEK":
-                getMyBalance().setSEK(getMyBalance().getSEK() + summa);
+                getMyBalance().setSEK(new BigDecimal(getMyBalance().getSEK()).add(summa).setScale(2, RoundingMode.DOWN)
+                        .doubleValue());
                 userBalanceRepository.save(getMyBalance());
                 break;
             case "CHF":
-                getMyBalance().setCHF(getMyBalance().getCHF() + summa);
+                getMyBalance().setCHF(new BigDecimal(getMyBalance().getCHF()).add(summa).setScale(2, RoundingMode.DOWN)
+                        .doubleValue());
                 userBalanceRepository.save(getMyBalance());
                 break;
             case "THB":
-                getMyBalance().setTHB(getMyBalance().getTHB() + summa);
+                getMyBalance().setTHB(new BigDecimal(getMyBalance().getTHB()).add(summa).setScale(2, RoundingMode.DOWN)
+                        .doubleValue());
                 userBalanceRepository.save(getMyBalance());
                 break;
             case "USD":
-                getMyBalance().setUSD(getMyBalance().getUSD() + summa);
+                getMyBalance().setUSD(new BigDecimal(getMyBalance().getUSD()).add(summa).setScale(2, RoundingMode.DOWN)
+                        .doubleValue());
                 userBalanceRepository.save(getMyBalance());
                 break;
             default:
