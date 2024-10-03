@@ -114,8 +114,10 @@ public class ActionService {
                                 || getMyBalance().getAUD() < transferData.summa()) {
                             return new TransferResponse(errorResponse);
                         } else {
-                            getMyBalance().setAUD(getMyBalance().getAUD() - transferData.summa());
-                            tUserBalance.setAUD(tUserBalance.getAUD() + transferData.summa());
+                            getMyBalance().setAUD(new BigDecimal(getMyBalance().getAUD())
+                                    .subtract(new BigDecimal(transferData.summa())).doubleValue());
+                            tUserBalance.setAUD(new BigDecimal(tUserBalance.getAUD())
+                                    .add(new BigDecimal(transferData.summa())).doubleValue());
                             break;
                         }
                     case "BRL":
@@ -123,8 +125,10 @@ public class ActionService {
                                 || getMyBalance().getBRL() < transferData.summa()) {
                             return new TransferResponse(errorResponse);
                         } else {
-                            getMyBalance().setBRL(getMyBalance().getBRL() - transferData.summa());
-                            tUserBalance.setBRL(tUserBalance.getBRL() + transferData.summa());
+                            getMyBalance().setBRL(new BigDecimal(getMyBalance().getBRL())
+                                    .subtract(new BigDecimal(transferData.summa())).doubleValue());
+                            tUserBalance.setBRL(new BigDecimal(tUserBalance.getBRL())
+                                    .add(new BigDecimal(transferData.summa())).doubleValue());
                             break;
                         }
                     case "CAD":
@@ -132,8 +136,10 @@ public class ActionService {
                                 || getMyBalance().getCAD() < transferData.summa()) {
                             return new TransferResponse(errorResponse);
                         } else {
-                            getMyBalance().setCAD(getMyBalance().getCAD() - transferData.summa());
-                            tUserBalance.setCAD(tUserBalance.getCAD() + transferData.summa());
+                            getMyBalance().setCAD(new BigDecimal(getMyBalance().getCAD())
+                                    .subtract(new BigDecimal(transferData.summa())).doubleValue());
+                            tUserBalance.setCAD(new BigDecimal(tUserBalance.getCAD())
+                                    .add(new BigDecimal(transferData.summa())).doubleValue());
                             break;
                         }
                     case "CNY":
@@ -141,8 +147,10 @@ public class ActionService {
                                 || getMyBalance().getCNY() < transferData.summa()) {
                             return new TransferResponse(errorResponse);
                         } else {
-                            getMyBalance().setCNY(getMyBalance().getCNY() - transferData.summa());
-                            tUserBalance.setCNY(tUserBalance.getCNY() + transferData.summa());
+                            getMyBalance().setCNY(new BigDecimal(getMyBalance().getCNY())
+                                    .subtract(new BigDecimal(transferData.summa())).doubleValue());
+                            tUserBalance.setCNY(new BigDecimal(tUserBalance.getCNY())
+                                    .add(new BigDecimal(transferData.summa())).doubleValue());
                             break;
                         }
                     case "CZK":
@@ -150,8 +158,10 @@ public class ActionService {
                                 || getMyBalance().getCZK() < transferData.summa()) {
                             return new TransferResponse(errorResponse);
                         } else {
-                            getMyBalance().setCZK(getMyBalance().getCZK() - transferData.summa());
-                            tUserBalance.setUSD(tUserBalance.getUSD() + transferData.summa());
+                            getMyBalance().setCZK(new BigDecimal(getMyBalance().getCZK())
+                                    .subtract(new BigDecimal(transferData.summa())).doubleValue());
+                            tUserBalance.setUSD(new BigDecimal(tUserBalance.getUSD())
+                                    .add(new BigDecimal(transferData.summa())).doubleValue());
                             break;
                         }
                     case "DKK":
@@ -159,8 +169,10 @@ public class ActionService {
                                 || getMyBalance().getDKK() < transferData.summa()) {
                             return new TransferResponse(errorResponse);
                         } else {
-                            getMyBalance().setDKK(getMyBalance().getDKK() - transferData.summa());
-                            tUserBalance.setDKK(tUserBalance.getDKK() + transferData.summa());
+                            getMyBalance().setDKK(new BigDecimal(getMyBalance().getDKK())
+                                    .subtract(new BigDecimal(transferData.summa())).doubleValue());
+                            tUserBalance.setDKK(new BigDecimal(tUserBalance.getDKK())
+                                    .add(new BigDecimal(transferData.summa())).doubleValue());
                             break;
                         }
                     case "EUR":
@@ -168,8 +180,10 @@ public class ActionService {
                                 || getMyBalance().getEUR() < transferData.summa()) {
                             return new TransferResponse(errorResponse);
                         } else {
-                            getMyBalance().setEUR(getMyBalance().getEUR() - transferData.summa());
-                            tUserBalance.setEUR(tUserBalance.getEUR() + transferData.summa());
+                            getMyBalance().setEUR(new BigDecimal(getMyBalance().getEUR())
+                                    .subtract(new BigDecimal(transferData.summa())).doubleValue());
+                            tUserBalance.setEUR(new BigDecimal(tUserBalance.getEUR())
+                                    .add(new BigDecimal(transferData.summa())).doubleValue());
                             break;
                         }
                     case "HKD":
@@ -177,8 +191,10 @@ public class ActionService {
                                 || getMyBalance().getHKD() < transferData.summa()) {
                             return new TransferResponse(errorResponse);
                         } else {
-                            getMyBalance().setHKD(getMyBalance().getHKD() - transferData.summa());
-                            tUserBalance.setHKD(tUserBalance.getHKD() + transferData.summa());
+                            getMyBalance().setHKD(new BigDecimal(getMyBalance().getHKD())
+                                    .subtract(new BigDecimal(transferData.summa())).doubleValue());
+                            tUserBalance.setHKD(new BigDecimal(tUserBalance.getHKD())
+                                    .add(new BigDecimal(transferData.summa())).doubleValue());
                             break;
                         }
                     case "HUF":
@@ -186,8 +202,10 @@ public class ActionService {
                                 || getMyBalance().getHUF() < transferData.summa()) {
                             return new TransferResponse(errorResponse);
                         } else {
-                            getMyBalance().setHUF(getMyBalance().getHUF() - transferData.summa());
-                            tUserBalance.setHUF(tUserBalance.getHUF() + transferData.summa());
+                            getMyBalance().setHUF(new BigDecimal(getMyBalance().getHUF())
+                                    .subtract(new BigDecimal(transferData.summa())).doubleValue());
+                            tUserBalance.setHUF(new BigDecimal(tUserBalance.getHUF())
+                                    .add(new BigDecimal(transferData.summa())).doubleValue());
                             break;
                         }
                     case "ILS":
@@ -195,8 +213,10 @@ public class ActionService {
                                 || getMyBalance().getILS() < transferData.summa()) {
                             return new TransferResponse(errorResponse);
                         } else {
-                            getMyBalance().setILS(getMyBalance().getILS() - transferData.summa());
-                            tUserBalance.setILS(tUserBalance.getILS() + transferData.summa());
+                            getMyBalance().setILS(new BigDecimal(getMyBalance().getILS())
+                                    .subtract(new BigDecimal(transferData.summa())).doubleValue());
+                            tUserBalance.setILS(new BigDecimal(tUserBalance.getILS())
+                                    .add(new BigDecimal(transferData.summa())).doubleValue());
                             break;
                         }
                     case "JPY":
@@ -204,8 +224,10 @@ public class ActionService {
                                 || getMyBalance().getJPY() < transferData.summa()) {
                             return new TransferResponse(errorResponse);
                         } else {
-                            getMyBalance().setJPY(getMyBalance().getJPY() - transferData.summa());
-                            tUserBalance.setJPY(tUserBalance.getJPY() + transferData.summa());
+                            getMyBalance().setJPY(new BigDecimal(getMyBalance().getJPY())
+                                    .subtract(new BigDecimal(transferData.summa())).doubleValue());
+                            tUserBalance.setJPY(new BigDecimal(tUserBalance.getJPY())
+                                    .add(new BigDecimal(transferData.summa())).doubleValue());
                             break;
                         }
                     case "MYR":
@@ -213,8 +235,10 @@ public class ActionService {
                                 || getMyBalance().getMYR() < transferData.summa()) {
                             return new TransferResponse(errorResponse);
                         } else {
-                            getMyBalance().setMYR(getMyBalance().getMYR() - transferData.summa());
-                            tUserBalance.setMYR(tUserBalance.getMYR() + transferData.summa());
+                            getMyBalance().setMYR(new BigDecimal(getMyBalance().getMYR())
+                                    .subtract(new BigDecimal(transferData.summa())).doubleValue());
+                            tUserBalance.setMYR(new BigDecimal(tUserBalance.getMYR())
+                                    .add(new BigDecimal(transferData.summa())).doubleValue());
                             break;
                         }
                     case "MXN":
@@ -222,8 +246,10 @@ public class ActionService {
                                 || getMyBalance().getMXN() < transferData.summa()) {
                             return new TransferResponse(errorResponse);
                         } else {
-                            getMyBalance().setMXN(getMyBalance().getMXN() - transferData.summa());
-                            tUserBalance.setMXN(tUserBalance.getMXN() + transferData.summa());
+                            getMyBalance().setMXN(new BigDecimal(getMyBalance().getMXN())
+                                    .subtract(new BigDecimal(transferData.summa())).doubleValue());
+                            tUserBalance.setMXN(new BigDecimal(tUserBalance.getMXN())
+                                    .add(new BigDecimal(transferData.summa())).doubleValue());
                             break;
                         }
                     case "TWD":
@@ -231,8 +257,10 @@ public class ActionService {
                                 || getMyBalance().getTWD() < transferData.summa()) {
                             return new TransferResponse(errorResponse);
                         } else {
-                            getMyBalance().setTWD(getMyBalance().getTWD() - transferData.summa());
-                            tUserBalance.setTWD(tUserBalance.getTWD() + transferData.summa());
+                            getMyBalance().setTWD(new BigDecimal(getMyBalance().getTWD())
+                                    .subtract(new BigDecimal(transferData.summa())).doubleValue());
+                            tUserBalance.setTWD(new BigDecimal(tUserBalance.getTWD())
+                                    .add(new BigDecimal(transferData.summa())).doubleValue());
                             break;
                         }
                     case "NZD":
@@ -240,8 +268,10 @@ public class ActionService {
                                 || getMyBalance().getNZD() < transferData.summa()) {
                             return new TransferResponse(errorResponse);
                         } else {
-                            getMyBalance().setNZD(getMyBalance().getNZD() - transferData.summa());
-                            tUserBalance.setNZD(tUserBalance.getNZD() + transferData.summa());
+                            getMyBalance().setNZD(new BigDecimal(getMyBalance().getNZD())
+                                    .subtract(new BigDecimal(transferData.summa())).doubleValue());
+                            tUserBalance.setNZD(new BigDecimal(tUserBalance.getNZD())
+                                    .add(new BigDecimal(transferData.summa())).doubleValue());
                             break;
                         }
                     case "NOK":
@@ -249,8 +279,10 @@ public class ActionService {
                                 || getMyBalance().getNOK() < transferData.summa()) {
                             return new TransferResponse(errorResponse);
                         } else {
-                            getMyBalance().setNOK(getMyBalance().getNOK() - transferData.summa());
-                            tUserBalance.setNOK(tUserBalance.getNOK() + transferData.summa());
+                            getMyBalance().setNOK(new BigDecimal(getMyBalance().getNOK())
+                                    .subtract(new BigDecimal(transferData.summa())).doubleValue());
+                            tUserBalance.setNOK(new BigDecimal(tUserBalance.getNOK())
+                                    .add(new BigDecimal(transferData.summa())).doubleValue());
                             break;
                         }
                     case "PHP":
@@ -258,8 +290,10 @@ public class ActionService {
                                 || getMyBalance().getPHP() < transferData.summa()) {
                             return new TransferResponse(errorResponse);
                         } else {
-                            getMyBalance().setPHP(getMyBalance().getPHP() - transferData.summa());
-                            tUserBalance.setPHP(tUserBalance.getPHP() + transferData.summa());
+                            getMyBalance().setPHP(new BigDecimal(getMyBalance().getPHP())
+                                    .subtract(new BigDecimal(transferData.summa())).doubleValue());
+                            tUserBalance.setPHP(new BigDecimal(tUserBalance.getPHP())
+                                    .add(new BigDecimal(transferData.summa())).doubleValue());
                             break;
                         }
                     case "PLN":
@@ -267,8 +301,10 @@ public class ActionService {
                                 || getMyBalance().getPLN() < transferData.summa()) {
                             return new TransferResponse(errorResponse);
                         } else {
-                            getMyBalance().setPLN(getMyBalance().getPLN() - transferData.summa());
-                            tUserBalance.setPLN(tUserBalance.getPLN() + transferData.summa());
+                            getMyBalance().setPLN(new BigDecimal(getMyBalance().getPLN())
+                                    .subtract(new BigDecimal(transferData.summa())).doubleValue());
+                            tUserBalance.setPLN(new BigDecimal(tUserBalance.getPLN())
+                                    .add(new BigDecimal(transferData.summa())).doubleValue());
                             break;
                         }
                     case "GBP":
@@ -276,8 +312,10 @@ public class ActionService {
                                 || getMyBalance().getGBP() < transferData.summa()) {
                             return new TransferResponse(errorResponse);
                         } else {
-                            getMyBalance().setGBP(getMyBalance().getGBP() - transferData.summa());
-                            tUserBalance.setGBP(tUserBalance.getGBP() + transferData.summa());
+                            getMyBalance().setGBP(new BigDecimal(getMyBalance().getGBP())
+                                    .subtract(new BigDecimal(transferData.summa())).doubleValue());
+                            tUserBalance.setGBP(new BigDecimal(tUserBalance.getGBP())
+                                    .add(new BigDecimal(transferData.summa())).doubleValue());
                             break;
                         }
                     case "SGD":
@@ -285,8 +323,10 @@ public class ActionService {
                                 || getMyBalance().getSGD() < transferData.summa()) {
                             return new TransferResponse(errorResponse);
                         } else {
-                            getMyBalance().setSGD(getMyBalance().getSGD() - transferData.summa());
-                            tUserBalance.setSGD(tUserBalance.getSGD() + transferData.summa());
+                            getMyBalance().setSGD(new BigDecimal(getMyBalance().getSGD())
+                                    .subtract(new BigDecimal(transferData.summa())).doubleValue());
+                            tUserBalance.setSGD(new BigDecimal(tUserBalance.getSGD())
+                                    .add(new BigDecimal(transferData.summa())).doubleValue());
                             break;
                         }
                     case "SEK":
@@ -294,8 +334,10 @@ public class ActionService {
                                 || getMyBalance().getSEK() < transferData.summa()) {
                             return new TransferResponse(errorResponse);
                         } else {
-                            getMyBalance().setSEK(getMyBalance().getSEK() - transferData.summa());
-                            tUserBalance.setSEK(tUserBalance.getSEK() + transferData.summa());
+                            getMyBalance().setSEK(new BigDecimal(getMyBalance().getSEK())
+                                    .subtract(new BigDecimal(transferData.summa())).doubleValue());
+                            tUserBalance.setSEK(new BigDecimal(tUserBalance.getSEK())
+                                    .add(new BigDecimal(transferData.summa())).doubleValue());
                             break;
                         }
                     case "CHF":
@@ -303,8 +345,10 @@ public class ActionService {
                                 || getMyBalance().getCHF() < transferData.summa()) {
                             return new TransferResponse(errorResponse);
                         } else {
-                            getMyBalance().setCHF(getMyBalance().getCHF() - transferData.summa());
-                            tUserBalance.setCHF(tUserBalance.getCHF() + transferData.summa());
+                            getMyBalance().setCHF(new BigDecimal(getMyBalance().getCHF())
+                                    .subtract(new BigDecimal(transferData.summa())).doubleValue());
+                            tUserBalance.setCHF(new BigDecimal(tUserBalance.getCHF())
+                                    .add(new BigDecimal(transferData.summa())).doubleValue());
                             break;
                         }
                     case "THB":
@@ -312,8 +356,10 @@ public class ActionService {
                                 || getMyBalance().getTHB() < transferData.summa()) {
                             return new TransferResponse(errorResponse);
                         } else {
-                            getMyBalance().setTHB(getMyBalance().getTHB() - transferData.summa());
-                            tUserBalance.setTHB(tUserBalance.getTHB() + transferData.summa());
+                            getMyBalance().setTHB(new BigDecimal(getMyBalance().getTHB())
+                                    .subtract(new BigDecimal(transferData.summa())).doubleValue());
+                            tUserBalance.setTHB(new BigDecimal(tUserBalance.getTHB())
+                                    .add(new BigDecimal(transferData.summa())).doubleValue());
                             break;
                         }
                     case "USD":
@@ -321,8 +367,10 @@ public class ActionService {
                                 || getMyBalance().getUSD() < transferData.summa()) {
                             return new TransferResponse(errorResponse);
                         } else {
-                            getMyBalance().setUSD(getMyBalance().getUSD() - transferData.summa());
-                            tUserBalance.setUSD(tUserBalance.getUSD() + transferData.summa());
+                            getMyBalance().setUSD(new BigDecimal(getMyBalance().getUSD())
+                                    .subtract(new BigDecimal(transferData.summa())).doubleValue());
+                            tUserBalance.setUSD(new BigDecimal(tUserBalance.getUSD())
+                                    .add(new BigDecimal(transferData.summa())).doubleValue());
                             break;
                         }
                     default:
@@ -365,169 +413,241 @@ public class ActionService {
             case "AUD":
                 Double AUD = this.getSummaFromBaseCurrency(convertRequest)
                         .getDouble(convertRequest.targetCurrency());
+
                 getMyBalance()
-                        .setAUD(getMyBalance().getAUD() + Math.floor(AUD * convertRequest.summa() * 100) / 100);
+                        .setAUD(new BigDecimal(getMyBalance().getAUD())
+                                .add(new BigDecimal(Math.floor(AUD * convertRequest.summa() * 100) / 100))
+                                .setScale(2, RoundingMode.DOWN).doubleValue());
                 userBalanceRepository.save(getMyBalance());
                 break;
             case "BRL":
                 Double BRL = this.getSummaFromBaseCurrency(convertRequest)
                         .getDouble(convertRequest.targetCurrency());
+
                 getMyBalance()
-                        .setBRL(getMyBalance().getBRL() + Math.floor(BRL * convertRequest.summa() * 100) / 100);
+                        .setBRL(new BigDecimal(getMyBalance().getBRL())
+                                .add(new BigDecimal(Math.floor(BRL * convertRequest.summa() * 100) / 100))
+                                .setScale(2, RoundingMode.DOWN).doubleValue());
                 userBalanceRepository.save(getMyBalance());
                 break;
             case "CAD":
                 Double CAD = this.getSummaFromBaseCurrency(convertRequest)
                         .getDouble(convertRequest.targetCurrency());
+
                 getMyBalance()
-                        .setCAD(getMyBalance().getCAD() + Math.floor(CAD * convertRequest.summa() * 100) / 100);
+                        .setCAD(new BigDecimal(getMyBalance().getCAD())
+                                .add(new BigDecimal(Math.floor(CAD * convertRequest.summa() * 100) / 100))
+                                .setScale(2, RoundingMode.DOWN).doubleValue());
                 userBalanceRepository.save(getMyBalance());
                 break;
             case "CNY":
                 Double CNY = this.getSummaFromBaseCurrency(convertRequest)
                         .getDouble(convertRequest.targetCurrency());
+
                 getMyBalance()
-                        .setCNY(getMyBalance().getCNY() + Math.floor(CNY * convertRequest.summa() * 100) / 100);
+                        .setCNY(new BigDecimal(getMyBalance().getCNY())
+                                .add(new BigDecimal(Math.floor(CNY * convertRequest.summa() * 100) / 100))
+                                .setScale(2, RoundingMode.DOWN).doubleValue());
                 userBalanceRepository.save(getMyBalance());
                 break;
             case "CZK":
                 Double CZK = this.getSummaFromBaseCurrency(convertRequest)
                         .getDouble(convertRequest.targetCurrency());
+
                 getMyBalance()
-                        .setCZK(getMyBalance().getCZK() + Math.floor(CZK * convertRequest.summa() * 100) / 100);
+                        .setCZK(new BigDecimal(getMyBalance().getCZK())
+                                .add(new BigDecimal(Math.floor(CZK * convertRequest.summa() * 100) / 100))
+                                .setScale(2, RoundingMode.DOWN).doubleValue());
                 userBalanceRepository.save(getMyBalance());
                 break;
             case "DKK":
                 Double DKK = this.getSummaFromBaseCurrency(convertRequest)
                         .getDouble(convertRequest.targetCurrency());
+
                 getMyBalance()
-                        .setDKK(getMyBalance().getDKK() + Math.floor(DKK * convertRequest.summa() * 100) / 100);
+                        .setDKK(new BigDecimal(getMyBalance().getDKK())
+                                .add(new BigDecimal(Math.floor(DKK * convertRequest.summa() * 100) / 100))
+                                .setScale(2, RoundingMode.DOWN).doubleValue());
                 userBalanceRepository.save(getMyBalance());
                 break;
             case "EUR":
                 Double EUR = this.getSummaFromBaseCurrency(convertRequest)
                         .getDouble(convertRequest.targetCurrency());
+
                 getMyBalance()
-                        .setEUR(getMyBalance().getEUR() + Math.floor(EUR * convertRequest.summa() * 100) / 100);
+                        .setEUR(new BigDecimal(getMyBalance().getEUR())
+                                .add(new BigDecimal(Math.floor(EUR * convertRequest.summa() * 100) / 100))
+                                .setScale(2, RoundingMode.DOWN).doubleValue());
                 userBalanceRepository.save(getMyBalance());
                 break;
             case "HKD":
                 Double HKD = this.getSummaFromBaseCurrency(convertRequest)
                         .getDouble(convertRequest.targetCurrency());
+
                 getMyBalance()
-                        .setHKD(getMyBalance().getHKD() + Math.floor(HKD * convertRequest.summa() * 100) / 100);
+                        .setHKD(new BigDecimal(getMyBalance().getHKD())
+                                .add(new BigDecimal(Math.floor(HKD * convertRequest.summa() * 100) / 100))
+                                .setScale(2, RoundingMode.DOWN).doubleValue());
                 userBalanceRepository.save(getMyBalance());
                 break;
             case "HUF":
                 Double HUF = this.getSummaFromBaseCurrency(convertRequest)
                         .getDouble(convertRequest.targetCurrency());
+
                 getMyBalance()
-                        .setHUF(getMyBalance().getHUF() + Math.floor(HUF * convertRequest.summa() * 100) / 100);
+                        .setHUF(new BigDecimal(getMyBalance().getHUF())
+                                .add(new BigDecimal(Math.floor(HUF * convertRequest.summa() * 100) / 100))
+                                .setScale(2, RoundingMode.DOWN).doubleValue());
                 userBalanceRepository.save(getMyBalance());
                 break;
             case "ILS":
                 Double ILS = this.getSummaFromBaseCurrency(convertRequest)
                         .getDouble(convertRequest.targetCurrency());
+
                 getMyBalance()
-                        .setILS(getMyBalance().getILS() + Math.floor(ILS * convertRequest.summa() * 100) / 100);
+                        .setILS(new BigDecimal(getMyBalance().getILS())
+                                .add(new BigDecimal(Math.floor(ILS * convertRequest.summa() * 100) / 100))
+                                .setScale(2, RoundingMode.DOWN).doubleValue());
                 userBalanceRepository.save(getMyBalance());
                 break;
             case "JPY":
                 Double JPY = this.getSummaFromBaseCurrency(convertRequest)
                         .getDouble(convertRequest.targetCurrency());
+
                 getMyBalance()
-                        .setJPY(getMyBalance().getJPY() + Math.floor(JPY * convertRequest.summa() * 100) / 100);
+                        .setJPY(new BigDecimal(getMyBalance().getJPY())
+                                .add(new BigDecimal(Math.floor(JPY * convertRequest.summa() * 100) / 100))
+                                .setScale(2, RoundingMode.DOWN).doubleValue());
                 userBalanceRepository.save(getMyBalance());
                 break;
             case "MYR":
                 Double MYR = this.getSummaFromBaseCurrency(convertRequest)
                         .getDouble(convertRequest.targetCurrency());
+
                 getMyBalance()
-                        .setMYR(getMyBalance().getMYR() + Math.floor(MYR * convertRequest.summa() * 100) / 100);
+                        .setMYR(new BigDecimal(getMyBalance().getMYR())
+                                .add(new BigDecimal(Math.floor(MYR * convertRequest.summa() * 100) / 100))
+                                .setScale(2, RoundingMode.DOWN).doubleValue());
                 userBalanceRepository.save(getMyBalance());
                 break;
             case "MXN":
                 Double MXN = this.getSummaFromBaseCurrency(convertRequest)
                         .getDouble(convertRequest.targetCurrency());
+
                 getMyBalance()
-                        .setMXN(getMyBalance().getMXN() + Math.floor(MXN * convertRequest.summa() * 100) / 100);
+                        .setMXN(new BigDecimal(getMyBalance().getMXN())
+                                .add(new BigDecimal(Math.floor(MXN * convertRequest.summa() * 100) / 100))
+                                .setScale(2, RoundingMode.DOWN).doubleValue());
                 userBalanceRepository.save(getMyBalance());
                 break;
             case "TWD":
                 Double TWD = this.getSummaFromBaseCurrency(convertRequest)
                         .getDouble(convertRequest.targetCurrency());
+
                 getMyBalance()
-                        .setTWD(getMyBalance().getTWD() + Math.floor(TWD * convertRequest.summa() * 100) / 100);
+                        .setTWD(new BigDecimal(getMyBalance().getTWD())
+                                .add(new BigDecimal(Math.floor(TWD * convertRequest.summa() * 100) / 100))
+                                .setScale(2, RoundingMode.DOWN).doubleValue());
                 userBalanceRepository.save(getMyBalance());
                 break;
             case "NZD":
                 Double NZD = this.getSummaFromBaseCurrency(convertRequest)
                         .getDouble(convertRequest.targetCurrency());
+
                 getMyBalance()
-                        .setNZD(getMyBalance().getNZD() + Math.floor(NZD * convertRequest.summa() * 100) / 100);
+                        .setNZD(new BigDecimal(getMyBalance().getNZD())
+                                .add(new BigDecimal(Math.floor(NZD * convertRequest.summa() * 100) / 100))
+                                .setScale(2, RoundingMode.DOWN).doubleValue());
                 userBalanceRepository.save(getMyBalance());
                 break;
             case "NOK":
                 Double NOK = this.getSummaFromBaseCurrency(convertRequest)
                         .getDouble(convertRequest.targetCurrency());
+
                 getMyBalance()
-                        .setNOK(getMyBalance().getNOK() + Math.floor(NOK * convertRequest.summa() * 100) / 100);
+                        .setNOK(new BigDecimal(getMyBalance().getNOK())
+                                .add(new BigDecimal(Math.floor(NOK * convertRequest.summa() * 100) / 100))
+                                .setScale(2, RoundingMode.DOWN).doubleValue());
                 userBalanceRepository.save(getMyBalance());
                 break;
             case "PHP":
                 Double PHP = this.getSummaFromBaseCurrency(convertRequest)
                         .getDouble(convertRequest.targetCurrency());
+
                 getMyBalance()
-                        .setPHP(getMyBalance().getPHP() + Math.floor(PHP * convertRequest.summa() * 100) / 100);
+                        .setPHP(new BigDecimal(getMyBalance().getPHP())
+                                .add(new BigDecimal(Math.floor(PHP * convertRequest.summa() * 100) / 100))
+                                .setScale(2, RoundingMode.DOWN).doubleValue());
                 userBalanceRepository.save(getMyBalance());
                 break;
             case "PLN":
                 Double PLN = this.getSummaFromBaseCurrency(convertRequest)
                         .getDouble(convertRequest.targetCurrency());
+
                 getMyBalance()
-                        .setPLN(getMyBalance().getPLN() + Math.floor(PLN * convertRequest.summa() * 100) / 100);
+                        .setPLN(new BigDecimal(getMyBalance().getPLN())
+                                .add(new BigDecimal(Math.floor(PLN * convertRequest.summa() * 100) / 100))
+                                .setScale(2, RoundingMode.DOWN).doubleValue());
                 userBalanceRepository.save(getMyBalance());
                 break;
             case "GBP":
                 Double GBP = this.getSummaFromBaseCurrency(convertRequest)
                         .getDouble(convertRequest.targetCurrency());
+
                 getMyBalance()
-                        .setGBP(getMyBalance().getGBP() + Math.floor(GBP * convertRequest.summa() * 100) / 100);
+                        .setGBP(new BigDecimal(getMyBalance().getGBP())
+                                .add(new BigDecimal(Math.floor(GBP * convertRequest.summa() * 100) / 100))
+                                .setScale(2, RoundingMode.DOWN).doubleValue());
                 userBalanceRepository.save(getMyBalance());
                 break;
             case "SGD":
                 Double SGD = this.getSummaFromBaseCurrency(convertRequest)
                         .getDouble(convertRequest.targetCurrency());
+
                 getMyBalance()
-                        .setSGD(getMyBalance().getSGD() + Math.floor(SGD * convertRequest.summa() * 100) / 100);
+                        .setSGD(new BigDecimal(getMyBalance().getSGD())
+                                .add(new BigDecimal(Math.floor(SGD * convertRequest.summa() * 100) / 100))
+                                .setScale(2, RoundingMode.DOWN).doubleValue());
                 userBalanceRepository.save(getMyBalance());
                 break;
             case "SEK":
                 Double SEK = this.getSummaFromBaseCurrency(convertRequest)
                         .getDouble(convertRequest.targetCurrency());
+
                 getMyBalance()
-                        .setSEK(getMyBalance().getSEK() + Math.floor(SEK * convertRequest.summa() * 100) / 100);
+                        .setSEK(new BigDecimal(getMyBalance().getSEK())
+                                .add(new BigDecimal(Math.floor(SEK * convertRequest.summa() * 100) / 100))
+                                .setScale(2, RoundingMode.DOWN).doubleValue());
                 userBalanceRepository.save(getMyBalance());
                 break;
             case "CHF":
                 Double CHF = this.getSummaFromBaseCurrency(convertRequest)
                         .getDouble(convertRequest.targetCurrency());
+
                 getMyBalance()
-                        .setCHF(getMyBalance().getCHF() + Math.floor(CHF * convertRequest.summa() * 100) / 100);
+                        .setCHF(new BigDecimal(getMyBalance().getCHF())
+                                .add(new BigDecimal(Math.floor(CHF * convertRequest.summa() * 100) / 100))
+                                .setScale(2, RoundingMode.DOWN).doubleValue());
                 userBalanceRepository.save(getMyBalance());
                 break;
             case "THB":
                 Double THB = this.getSummaFromBaseCurrency(convertRequest)
                         .getDouble(convertRequest.targetCurrency());
+
                 getMyBalance()
-                        .setTHB(getMyBalance().getTHB() + Math.floor(THB * convertRequest.summa() * 100) / 100);
+                        .setTHB(new BigDecimal(getMyBalance().getTHB())
+                                .add(new BigDecimal(Math.floor(THB * convertRequest.summa() * 100) / 100))
+                                .setScale(2, RoundingMode.DOWN).doubleValue());
                 userBalanceRepository.save(getMyBalance());
                 break;
             case "USD":
                 Double USD = this.getSummaFromBaseCurrency(convertRequest)
                         .getDouble(convertRequest.targetCurrency());
+
                 getMyBalance()
-                        .setUSD(getMyBalance().getUSD() + Math.floor(USD * convertRequest.summa() * 100) / 100);
+                        .setUSD(new BigDecimal(getMyBalance().getUSD())
+                                .add(new BigDecimal(Math.floor(USD * convertRequest.summa() * 100) / 100))
+                                .setScale(2, RoundingMode.DOWN).doubleValue());
                 userBalanceRepository.save(getMyBalance());
                 break;
             default:
@@ -542,99 +662,147 @@ public class ActionService {
         if (convertData != null) {
             switch (convertData.baseCurrency()) {
                 case "AUD":
-                    getMyBalance().setAUD(getMyBalance().getAUD() - convertData.summa());
+                    getMyBalance().setAUD(new BigDecimal(getMyBalance().getAUD())
+                            .subtract(new BigDecimal(convertData.summa())).setScale(2, RoundingMode.DOWN)
+                            .doubleValue());
                     setTargetBalanceCurrency(convertData);
                     break;
                 case "BRL":
-                    getMyBalance().setBRL(getMyBalance().getBRL() - convertData.summa());
+                    getMyBalance().setBRL(new BigDecimal(getMyBalance().getBRL())
+                            .subtract(new BigDecimal(convertData.summa()).setScale(2, RoundingMode.DOWN))
+                            .doubleValue());
                     setTargetBalanceCurrency(convertData);
                     break;
                 case "CAD":
-                    getMyBalance().setCAD(getMyBalance().getCAD() - convertData.summa());
+                    getMyBalance().setCAD(new BigDecimal(getMyBalance().getCAD())
+                            .subtract(new BigDecimal(convertData.summa()).setScale(2, RoundingMode.DOWN))
+                            .doubleValue());
                     setTargetBalanceCurrency(convertData);
                     break;
                 case "CNY":
-                    getMyBalance().setCNY(getMyBalance().getCNY() - convertData.summa());
+                    getMyBalance().setCNY(new BigDecimal(getMyBalance().getCNY())
+                            .subtract(new BigDecimal(convertData.summa()).setScale(2, RoundingMode.DOWN))
+                            .doubleValue());
                     setTargetBalanceCurrency(convertData);
                     break;
                 case "CZK":
-                    getMyBalance().setCZK(getMyBalance().getCZK() - convertData.summa());
+                    getMyBalance().setCZK(new BigDecimal(getMyBalance().getCZK())
+                            .subtract(new BigDecimal(convertData.summa()).setScale(2, RoundingMode.DOWN))
+                            .doubleValue());
                     setTargetBalanceCurrency(convertData);
                     break;
                 case "DKK":
-                    getMyBalance().setDKK(getMyBalance().getDKK() - convertData.summa());
+                    getMyBalance().setDKK(new BigDecimal(getMyBalance().getDKK())
+                            .subtract(new BigDecimal(convertData.summa()).setScale(2, RoundingMode.DOWN))
+                            .doubleValue());
                     setTargetBalanceCurrency(convertData);
                     break;
                 case "EUR":
-                    getMyBalance().setEUR(getMyBalance().getEUR() - convertData.summa());
+                    getMyBalance().setEUR(new BigDecimal(getMyBalance().getEUR())
+                            .subtract(new BigDecimal(convertData.summa()).setScale(2, RoundingMode.DOWN))
+                            .doubleValue());
                     setTargetBalanceCurrency(convertData);
                     break;
                 case "HKD":
-                    getMyBalance().setHKD(getMyBalance().getHKD() - convertData.summa());
+                    getMyBalance().setHKD(new BigDecimal(getMyBalance().getHKD())
+                            .subtract(new BigDecimal(convertData.summa()).setScale(2, RoundingMode.DOWN))
+                            .doubleValue());
                     setTargetBalanceCurrency(convertData);
                     break;
                 case "HUF":
-                    getMyBalance().setHUF(getMyBalance().getHUF() - convertData.summa());
+                    getMyBalance().setHUF(new BigDecimal(getMyBalance().getHUF())
+                            .subtract(new BigDecimal(convertData.summa()).setScale(2, RoundingMode.DOWN))
+                            .doubleValue());
                     setTargetBalanceCurrency(convertData);
                     break;
                 case "ILS":
-                    getMyBalance().setILS(getMyBalance().getILS() - convertData.summa());
+                    getMyBalance().setILS(new BigDecimal(getMyBalance().getILS())
+                            .subtract(new BigDecimal(convertData.summa()).setScale(2, RoundingMode.DOWN))
+                            .doubleValue());
                     setTargetBalanceCurrency(convertData);
                     break;
                 case "JPY":
-                    getMyBalance().setJPY(getMyBalance().getJPY() - convertData.summa());
+                    getMyBalance().setJPY(new BigDecimal(getMyBalance().getJPY())
+                            .subtract(new BigDecimal(convertData.summa()).setScale(2, RoundingMode.DOWN))
+                            .doubleValue());
                     setTargetBalanceCurrency(convertData);
                     break;
                 case "MYR":
-                    getMyBalance().setMYR(getMyBalance().getMYR() - convertData.summa());
+                    getMyBalance().setMYR(new BigDecimal(getMyBalance().getMYR())
+                            .subtract(new BigDecimal(convertData.summa()).setScale(2, RoundingMode.DOWN))
+                            .doubleValue());
                     setTargetBalanceCurrency(convertData);
                     break;
                 case "MXN":
-                    getMyBalance().setMXN(getMyBalance().getMXN() - convertData.summa());
+                    getMyBalance().setMXN(new BigDecimal(getMyBalance().getMXN())
+                            .subtract(new BigDecimal(convertData.summa()).setScale(2, RoundingMode.DOWN))
+                            .doubleValue());
                     setTargetBalanceCurrency(convertData);
                     break;
                 case "TWD":
-                    getMyBalance().setTWD(getMyBalance().getTWD() - convertData.summa());
+                    getMyBalance().setTWD(new BigDecimal(getMyBalance().getTWD())
+                            .subtract(new BigDecimal(convertData.summa()).setScale(2, RoundingMode.DOWN))
+                            .doubleValue());
                     setTargetBalanceCurrency(convertData);
                     break;
                 case "NZD":
-                    getMyBalance().setNZD(getMyBalance().getNZD() - convertData.summa());
+                    getMyBalance().setNZD(new BigDecimal(getMyBalance().getNZD())
+                            .subtract(new BigDecimal(convertData.summa()).setScale(2, RoundingMode.DOWN))
+                            .doubleValue());
                     setTargetBalanceCurrency(convertData);
                     break;
                 case "NOK":
-                    getMyBalance().setNOK(getMyBalance().getNOK() - convertData.summa());
+                    getMyBalance().setNOK(new BigDecimal(getMyBalance().getNOK())
+                            .subtract(new BigDecimal(convertData.summa()).setScale(2, RoundingMode.DOWN))
+                            .doubleValue());
                     setTargetBalanceCurrency(convertData);
                     break;
                 case "PHP":
-                    getMyBalance().setPHP(getMyBalance().getPHP() - convertData.summa());
+                    getMyBalance().setPHP(new BigDecimal(getMyBalance().getPHP())
+                            .subtract(new BigDecimal(convertData.summa()).setScale(2, RoundingMode.DOWN))
+                            .doubleValue());
                     setTargetBalanceCurrency(convertData);
                     break;
                 case "PLN":
-                    getMyBalance().setPLN(getMyBalance().getPLN() - convertData.summa());
+                    getMyBalance().setPLN(new BigDecimal(getMyBalance().getPLN())
+                            .subtract(new BigDecimal(convertData.summa()).setScale(2, RoundingMode.DOWN))
+                            .doubleValue());
                     setTargetBalanceCurrency(convertData);
                     break;
                 case "GBP":
-                    getMyBalance().setGBP(getMyBalance().getGBP() - convertData.summa());
+                    getMyBalance().setGBP(new BigDecimal(getMyBalance().getGBP())
+                            .subtract(new BigDecimal(convertData.summa()).setScale(2, RoundingMode.DOWN))
+                            .doubleValue());
                     setTargetBalanceCurrency(convertData);
                     break;
                 case "SGD":
-                    getMyBalance().setSGD(getMyBalance().getSGD() - convertData.summa());
+                    getMyBalance().setSGD(new BigDecimal(getMyBalance().getSGD())
+                            .subtract(new BigDecimal(convertData.summa()).setScale(2, RoundingMode.DOWN))
+                            .doubleValue());
                     setTargetBalanceCurrency(convertData);
                     break;
                 case "SEK":
-                    getMyBalance().setSEK(getMyBalance().getSEK() - convertData.summa());
+                    getMyBalance().setSEK(new BigDecimal(getMyBalance().getSEK())
+                            .subtract(new BigDecimal(convertData.summa()).setScale(2, RoundingMode.DOWN))
+                            .doubleValue());
                     setTargetBalanceCurrency(convertData);
                     break;
                 case "CHF":
-                    getMyBalance().setCHF(getMyBalance().getCHF() - convertData.summa());
+                    getMyBalance().setCHF(new BigDecimal(getMyBalance().getCHF())
+                            .subtract(new BigDecimal(convertData.summa()).setScale(2, RoundingMode.DOWN))
+                            .doubleValue());
                     setTargetBalanceCurrency(convertData);
                     break;
                 case "THB":
-                    getMyBalance().setTHB(getMyBalance().getTHB() - convertData.summa());
+                    getMyBalance().setTHB(new BigDecimal(getMyBalance().getTHB())
+                            .subtract(new BigDecimal(convertData.summa()).setScale(2, RoundingMode.DOWN))
+                            .doubleValue());
                     setTargetBalanceCurrency(convertData);
                     break;
                 case "USD":
-                    getMyBalance().setUSD(getMyBalance().getUSD() - convertData.summa());
+                    getMyBalance().setUSD(new BigDecimal(getMyBalance().getUSD())
+                            .subtract(new BigDecimal(convertData.summa()).setScale(2, RoundingMode.DOWN))
+                            .doubleValue());
                     setTargetBalanceCurrency(convertData);
                     break;
                 default:
